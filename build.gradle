@@ -1,0 +1,21 @@
+subprojects {
+
+  apply plugin: "java"
+  apply plugin: "groovy"
+ 
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+     testCompile "junit:junit:4+"
+  }
+}
+
+task run << {
+        println getProject().getBuildDir()+"       *****"
+        rootProject.subprojects.findAll {             
+                         subproject -> subproject.name
+       }
+}
+
