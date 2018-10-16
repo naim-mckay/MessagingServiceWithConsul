@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    consul:
+      config:
+        enabled: true
+        prefix: '/'
+        defaultContext: '/'
+        format: KEY_VALUE
+        watch:
+          enabled: true
+      port: 8500
+      discovery:
+        register-health-check: true
+  application:
+    name: message-service
+server:
+  port: 8802
